@@ -1,0 +1,66 @@
+private void getProfileData(){
+            try {
+                URL url = new URL(address);
+                HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+                con.setRequestMethod("GET");
+
+                is = new BufferedInputStream(con.getInputStream());
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            //READ IT'S CONTENT INTO STRING
+            try{
+                BufferedReader br = new BufferedReader(new InputStreamReader(is));
+                StringBuilder sb = new StringBuilder();
+
+                while((line=br.readLine()) != null){
+                    sb.append(line+"\n");
+                }
+
+                is.close();
+                result = sb.toString();
+                //Toast.makeText(getContext(),""+result, Toast.LENGTH_LONG).show();
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+
+            try{
+                JSONArray ja = new JSONArray(result);
+                JSONObject jo = null;
+
+                data = new String[ja.length()];
+
+                for(int i = 0; i<ja.length(); i++){
+                    jo = ja.getJSONObject(i);
+                    data[i] = jo.getString("image_path");
+                    //data[i] = jo.getString("title")+jo.getString("url");
+                }
+                //verify2 = true;
+
+
+            }catch (Exception e){
+                Toast.makeText(getApplicationContext(), ""+e, Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+
+            try {
+                if(!verify) {
+                    for (int i = 0; i < data.length; i++) {
+
+                        String temp;
+                        temp = data[i];
+                        //temp = temp.replaceAll("[0-9]", "");
+                        data2list.add(temp);
+
+                    }
+                    verify = true;
+                }
+                //Toast.makeText(getContext(), ""+data2[1], Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(), ""+data2list.get(0), Toast.LENGTH_LONG).show();
+            }catch (Exception e){
+                //Toast.makeText(getContext(), ""+e,Toast.LENGTH_LONG).show();
+                e.printStackTrace();
+            }
+        }

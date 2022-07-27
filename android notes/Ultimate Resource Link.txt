@@ -1,0 +1,11 @@
+https://github.com/wasabeef/awesome-android-ui
+https://appsnipp.com/
+https://github.com/ChadCSong/ShineButton
+https://github.com/Yalantis/Horizon
+https://github.com/DanielMartinus/Stepper-Touch   -- add less button
+
+The Ultimate Resource Link
+https://uxdesign.cc/ultimate-resource-list-for-mobile-design-c5a8aad17bd7
+
+A Month Full of Android Development - Best Articles List
+https://medium.com/@abangfadli/a-month-full-of-android-development-tips-and-tricks-b98c17627aa

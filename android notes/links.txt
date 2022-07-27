@@ -1,0 +1,92 @@
+
+itextpdf tutorial 1
+
+https://life-news.blog/2019/03/07/invoices-pdf-generator-android-studio/
+
+itextpdf tutorial 1
+
+https://itextpdf.com/en/resources/books/zugferd-future-invoicing/5-creating-pdf-invoices-basic-profile
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+Check active internet connection on android device - Medium 
+
+https://medium.com/@ankit_aggarwal/check-active-internet-connection-on-android-device-3138ad81932d
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+Make waves 
+
+Search on google : https://getwaves.io/
+
+make Blob :
+Search On Google : https://www.blobmaker.app/
+
+Material.io material design color tool
+
+https://material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=20ad49
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+Search Angga Risky on YT and search for following video title:
+	
+    --> Make a Wave UI Design Android Studio Tutorial
+
+    --> Link : https://www.youtube.com/watch?v=pnG2MsEFSIg
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+freepic.com for free png
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+
+svg porn for free svg images to use in android apps
+
+glaze : you can get svg - high res are paid but low res are free.
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+stepview library for android
+
+implementation 'com.shuhart.stepview:stepview:1.5.0'
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+Sequence layout in android - like flipkart shows the delivery progress - product dispatched, reached...etc
+
+implementation 'com.github.transferwise:sequence-layout:... // use latest version'
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+sites to make app images to upload while publishing apps
+
+applaunchpad , shotbot.io search for other free ulternatives for such sites
+
+or search for :  " make android app screenshot to publish ".
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+search for icons8.com
+
+link : https://icons8.com/icon/set/exit/ios
+
+in their ios sections there are lots of great icons as well, you can even download them at svg or png file format.
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+Animate any view from right to left, left to right etc.
+
+https://stackoverflow.com/a/14399845/11707117
+
+___________________________________________________________________________________________________________________________________________________________________________________
+
+Edit SVG Images
+
+https://vectorpaint.yaks.co.nz/
+
+Convert edited SVG into Vectore Drawable so it can become android compatible
+
+https://shapeshifter.design/
+
+___________________________________________________________________________________________________________________________________________________________________________________

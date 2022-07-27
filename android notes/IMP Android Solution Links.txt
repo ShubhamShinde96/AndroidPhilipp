@@ -1,0 +1,55 @@
+IMP LINKS
+
+Step View needed for Rexel
+https://github.com/shuhart/StepView
+
+ShapeOfView
+https://github.com/florent37/ShapeOfView
+
+Awesome Android all important and usefull libraried gihub repository
+https://github.com/JStumpp/awesome-android
+
+Passing ArrayList of objects to a new activity solution
+https://stackoverflow.com/questions/6681217/help-passing-an-arraylist-of-objects-to-a-new-activity
+
+Secure android shared preferences : 
+https://stackoverflow.com/questions/30148729/how-to-secure-android-shared-preferences
+
+android get real path from uri
+https://stackoverflow.com/questions/26195731/android-get-real-path-from-uri
+
+Building Notification Channel - Medium
+https://medium.com/android-ideas/building-notifications-on-android-o-ae36006a921b
+
+Job Scheduler - An Overview - Medium
+https://medium.com/ivymobility-developers/job-scheduler-a-right-background-scheduler-252bbc1c5d1a
+
+Recyclerview SmoothScrollTo by custome timing : note in below example link the value of displayMetrics.densityDpi is 480 and you should not return less
+  than 1 value ... not even 0.99
+https://stackoverflow.com/a/46437319/11707117
+
+
+To see visible item position in recyclerview
+https://stackoverflow.com/a/25053500/11707117
+
+Android Auto Start Suggested by this contributor
+https://stackoverflow.com/a/30259729/11707117
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Not so important links
+
+Android Notifications TutorialsPoint
+https://www.tutorialspoint.com/android/android_notifications.htm
+
+runOnUiThread for custome adapter - note if you use this in different class and still there is old activity casted you will run into classCastException
+https://stackoverflow.com/a/24988244/11707117
+
+Picasso load image efficiently using .fit() and more
+https://futurestud.io/tutorials/picasso-image-resizing-scaling-and-fit
+
+android development tips and tricks list of links by medium
+https://medium.com/@abangfadli/a-month-full-of-android-development-tips-and-tricks-b98c17627aa
+
+UI libraries list
+https://github.com/wasabeef/awesome-android-ui

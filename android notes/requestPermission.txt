@@ -1,0 +1,85 @@
+Check for permission : 
+
+global permission code = 
+private static final int REQUEST_CAMERA_PERMISSION = 301;
+
+on onClickListener = 
+if(checkSelfPermission()) {
+
+   // permission is granted so you can run your code here.
+
+
+} else {
+   requestPermission();
+}
+
+
+methods = 
+
+private boolean checkSelfPermission(){
+        if(ContextCompat.checkSelfPermission(AssignVehicleActivity.this, Manifest.permission.CAMERA)!= PackageManager.PERMISSION_GRANTED){
+
+            return false;
+        }
+
+        return true;
+    }
+
+    private void requestPermission(){
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CAMERA}, REQUEST_CAMERA_PERMISSION);
+
+    }
+
+
+
+onRequestPermissionResult() = 
+
+@Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode){
+            case REQUEST_CAMERA_PERMISSION:
+                if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    
+                    Toast.makeText(getApplicationContext(), "Permission Granted", Toast.LENGTH_LONG).show();
+
+                    // Now paste your logic or call your logic cause Permission is granted
+
+                    Intent pictureIntent = new Intent(
+                            MediaStore.ACTION_IMAGE_CAPTURE
+                    );
+                    if (pictureIntent.resolveActivity(getPackageManager()) != null) {
+                        startActivityForResult(pictureIntent,
+                                REQUEST_CAPTURE_IMAGE);
+                    }
+
+                    // paste your logic or call your logic cause Permission is granted
+                    
+                } else {
+                    
+                    // Permission denied to give a dialog message and ask again, also set cancel button in case user dont want to give permission.
+                    
+                    Toast.makeText(getApplicationContext(), "Permission denied", Toast.LENGTH_LONG).show();
+                    if(ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
+                        AlertDialog.Builder builder = new AlertDialog.Builder(AssignVehicleActivity.this);
+                        builder.setMessage("You need to allow this permission to capture vehicle image.")
+                                //.setCancelable(false)
+                                .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        dialog.dismiss();
+                                    }
+                                })
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int id) {
+                                        requestPermission();
+                                    }
+                                });
+                        AlertDialog alert = builder.create();
+                        alert.show();
+                    }
+                }
+        }
+
+    }

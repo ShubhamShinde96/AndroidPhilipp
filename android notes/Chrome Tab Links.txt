@@ -1,0 +1,23 @@
+SMS otp retriving new consent api
+https://androidwave.com/auto-read-otp-android-user-consent-api/
+
+pick image from callery or camera
+https://stackoverflow.com/questions/10165302/dialog-to-pick-image-from-gallery-or-from-camera
+
+Image path Uri using file provider api
+https://stackoverflow.com/questions/45181130/how-can-i-get-image-uri-using-file-provider
+
+android 10 scoped storage image picker from gallery or from camera
+https://medium.com/@pednekarshashank33/android-10s-scoped-storage-image-picker-gallery-camera-d3dcca427bbf
+
+get current location using webview
+https://stackoverflow.com/questions/31582988/current-location-android-using-webview
+
+journaldev - Android Capture Image Camera Gallery Using FileProvider
+https://www.journaldev.com/23219/android-capture-image-camera-gallery-using-fileprovider
+
+android developers.com -   migrate from viewpager to viewpager2
+https://developer.android.com/training/animation/vp2-migration
+
+Recycler merge adapter
+https://github.com/martijnvdwoude/recycler-view-merge-adapter

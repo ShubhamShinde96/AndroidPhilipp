@@ -1,0 +1,38 @@
+android amazing libraries : 
+
+implementation 'com.github.ybq:Android-SpinKit:1.4.0'
+
+https://medium.com/@mmbialas/25-new-android-libraries-projects-and-tools-worthy-to-check-in-spring-2018-68e3c5e93568
+
+https://developer.ibm.com/recipes/tutorials/android-top-10-animation-libraries/
+
+following link has some great libraries that we need to study
+https://medium.com/the-android-guy/common-android-libraries-you-should-use-in-every-android-projects-6f38e9350b84
+
+There are different dialog libraries for different pourposes and they are almost follow material design
+https://github.com/afollestad/material-dialogs
+
+androidx libraries
+https://medium.com/@mmbialas/30-summertime-android-libraries-and-tools-which-you-dont-want-to-miss-in-2018-fab053d69503
+
+https://github.com/codepath/android_guides/wiki/Must-Have-libraries
+
+https://github.com/anvil-ui/anvil
+
+https://github.com/sorrycc/awesome-javascript
+
+https://android-arsenal.com/details/1/8089       ---  implementation 'com.github.tuanhav95:DragView:1.0.0'
+ 
+https://android-arsenal.com/details/1/8091      ---  implementation "com.github.adrielcafe:dalek:$currentVersion"
+
+https://android-arsenal.com/details/1/8092     ----  implementation 'com.github.guilhe:keyboard-state-events:${LATEST_VERSION}'
+
+https://android-arsenal.com/details/1/8065     ---   implementation 'com.github.Cutta:LoadingImagesAnimation:1.1'
+
+https://github.com/KeepSafe/TapTargetView
+
+https://github.com/TakuSemba/Spotlight
+
+https://github.com/john990/WaveView
+
+https://github.com/FabianTerhorst/Isometric    ---  isometric shapes like monument valley

@@ -1,0 +1,28 @@
+
+make selected tab change color 
+https://stackoverflow.com/a/47947478/11707117
+
+Change position of the navigation lable title/ change padding and margin
+https://stackoverflow.com/a/53298479/11707117
+
+Government
+Electronics & Appliences
+Emergency
+Entertainment
+Furniture & Interiors
+Security Services
+Hotels & Restaurant
+Tours & Travels
+Gift & Toys
+Grocery
+Housekeeping & Cleaning
+Manufacturer
+Jewellery
+Petrol & Gas
+Pets & Animals
+Photo Studios
+Fruits & Vegitables
+Meat & Fish
+
+
+assus vivobook max x541n

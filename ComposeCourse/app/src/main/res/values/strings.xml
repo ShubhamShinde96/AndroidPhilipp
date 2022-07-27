@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ComposeCourse</string>
+    <string name="title_activity_modifiers">ModifiersActivity</string>
+    <string name="title_activity_image_card_compose">ImageCardComposeActivity</string>
+    <string name="title_activity_test_styling">TestStylingActivity</string>
+    <string name="title_activity_uistate">UIStateActivity</string>
+</resources>

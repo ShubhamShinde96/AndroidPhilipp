@@ -1,0 +1,12 @@
+MVVM, MVP android
+
+data binding 
+
+RX Java, RX Android 
+
+save the state of recyclerview.
+
+what is dagger?
+
+MVVM architecture and components.
+

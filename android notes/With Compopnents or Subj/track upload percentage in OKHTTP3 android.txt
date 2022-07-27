@@ -1,0 +1,11 @@
+RequestBody fileBody = RequestBody.create(file, MediaType.parse(content_type));
+
+                            RequestBody reqBody = ProgressHelper.withProgress(fileBody, new ProgressUIListener() {
+                                @Override
+                                public void onUIProgressChanged(long numBytes, long totalBytes, float percent, float speed) {
+                                    Log.d("PROGRESSLOG", "Progress =" + " " + percent + " " + "\nSpeed =" + " " + speed);
+                                }
+                            });
+
+
+library :    implementation 'io.github.lizhangqu:coreprogress:1.0.2'

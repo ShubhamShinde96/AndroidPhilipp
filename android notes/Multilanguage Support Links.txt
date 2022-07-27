@@ -1,0 +1,52 @@
+Multilanguage Support (ie Localization) links
+
+How to get the current locale (API level 24)?
+https://stackoverflow.com/questions/38267213/how-to-get-the-current-locale-api-level-24
+
+Get the current language name 
+https://stackoverflow.com/questions/4212320/get-the-current-language-in-device
+
+Change the app language programatically android
+https://stackoverflow.com/questions/2900023/change-app-language-programmatically-in-android
+
+Support for marathi language
+https://stackoverflow.com/questions/20238978/support-for-marathi-language
+
+Change language in android orio and orio plus devices ( also works in lower devices)
+https://stackoverflow.com/questions/47165311/how-to-change-android-o-oreo-api-26-app-language
+
+Helper class to change the language programatically
+https://devdeeds.com/android-change-language-at-runtime/
+
+How to change Android O / Oreo / api 26 app language
+https://stackoverflow.com/questions/47165311/how-to-change-android-o-oreo-api-26-app-language
+
+Android Developers - Localization Checklist - By Google Android Developers Blog
+https://developer.android.com/distribute/best-practices/launch/localization-checklist#gp-trans
+
+AndroidHive Multilanguage Support Article
+https://www.androidhive.info/2014/07/android-building-multi-language-supported-app/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

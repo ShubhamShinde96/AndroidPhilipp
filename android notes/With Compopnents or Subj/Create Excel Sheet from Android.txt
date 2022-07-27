@@ -1,0 +1,68 @@
+Stackoverflow link 
+
+https://stackoverflow.com/questions/43510418/generate-excel-from-android-listview
+
+Solution : 
+
+Jar file link
+http://www.java2s.com/Code/Jar/j/Downloadjxl2612jar.htm
+
+download and include above jar file in project
+
+add following dependency
+
+implementation files('libs/jxl-2.6.12.jar')
+
+Use following function and modify it according to your need.
+
+private void createExcelSheet()
+{
+    String Fnamexls="excelSheet"+System.currentTimeMillis()+ ".xls";
+    File sdCard = Environment.getExternalStorageDirectory();
+    File directory = new File (sdCard.getAbsolutePath() + "/newfolder");
+    directory.mkdirs();
+    File file = new File(directory, Fnamexls);
+
+    WorkbookSettings wbSettings = new WorkbookSettings();
+
+    wbSettings.setLocale(new Locale("en", "EN"));
+
+    WritableWorkbook workbook;
+    try {
+        int a = 1;
+        workbook = Workbook.createWorkbook(file, wbSettings);
+        //workbook.createSheet("Report", 0);
+        WritableSheet sheet = workbook.createSheet("First Sheet", 0);
+        Label label = new Label(0, 2, "SECOND");
+        Label label1 = new Label(0,1,"first");
+        Label label0 = new Label(0,0,"HEADING");
+        Label label3 = new Label(1,0,"Heading2");
+        Label label4 = new Label(1,1,String.valueOf(a));
+        try {
+            sheet.addCell(label);
+            sheet.addCell(label1);
+            sheet.addCell(label0);
+            sheet.addCell(label4);
+            sheet.addCell(label3);
+        } catch (RowsExceededException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (WriteException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+
+        workbook.write();
+        try {
+            workbook.close();
+        } catch (WriteException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        //createExcel(excelSheet);
+    } catch (IOException e) {
+        // TODO Auto-generated catch block
+        e.printStackTrace();
+    }
+}

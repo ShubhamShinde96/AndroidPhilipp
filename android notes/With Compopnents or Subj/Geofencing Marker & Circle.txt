@@ -1,0 +1,7 @@
+
+Geofencing Circle 
+https://stackoverflow.com/questions/11309632/how-to-find-zoom-level-based-on-circle-draw-on-map
+
+Check latitude and logitude are inside geofencing circle
+https://stackoverflow.com/questions/22063842/check-if-a-latitude-and-longitude-is-within-a-circle
+https://stackoverflow.com/questions/30170271/android-google-map-how-to-check-if-the-gps-location-is-inside-the-circle

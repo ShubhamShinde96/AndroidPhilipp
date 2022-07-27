@@ -1,0 +1,677 @@
+
+perform setSelection(i); on spinner after setting its adapter otherwise its not gonna work.
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        final ActionBar abar = getSupportActionBar();
+        //abar.setBackgroundDrawable(getResources().getDrawable(R.drawable.actionbar_background));//line under the action bar
+        View viewActionBar = getLayoutInflater().inflate(R.layout.actionbar_titletext_layout, null);
+        ActionBar.LayoutParams params = new ActionBar.LayoutParams(//Center the textview in the ActionBar !
+                ActionBar.LayoutParams.WRAP_CONTENT,
+                ActionBar.LayoutParams.MATCH_PARENT,
+                Gravity.CENTER);
+        TextView textviewTitle = (TextView) viewActionBar.findViewById(R.id.actionbar_textview);
+        textviewTitle.setText("Test");
+        abar.setCustomView(viewActionBar, params);
+        abar.setDisplayShowCustomEnabled(true);
+        abar.setDisplayShowTitleEnabled(false);
+        abar.setDisplayHomeAsUpEnabled(true);
+        abar.setIcon(R.color.transparent);
+        abar.setHomeButtonEnabled(true);
+
+
+make a layout file
+
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <TextView
+        android:id="@+id/actionbar_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:maxLines="1"
+        android:clickable="false"
+        android:focusable="false"
+        android:longClickable="false"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+ public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId()){
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+                default:
+                    return super.onOptionsItemSelected(item);
+        }
+    }
+
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+
+following method is used to make bottomsheet to expand to its full size, otherwise it expands to half size to which System
+is specified . Obviously your can expand bottomsheet by sliding up but if you want boottomsheet to expand fully then use this method.
+
+
+        getDialog().setOnShowListener(new DialogInterface.OnShowListener() {
+            @Override
+            public void onShow(DialogInterface dialog) {
+
+                BottomSheetDialog d = (BottomSheetDialog) dialog;
+
+                FrameLayout bottomSheet = (FrameLayout) d.findViewById(android.support.design.R.id.design_bottom_sheet);
+                BottomSheetBehavior.from(bottomSheet).setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+        });
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+to get current date from system in android 
+
+String date = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault()).format(new Date());
+
+change the pattern of date format according to your need.
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+to use date picker in android
+
+declare following globals
+
+private int mDay, mMonth, mYear;
+
+and call following function, pass integer parameter to use this function to set date for more than 1 textview
+
+public void pickdate(final int type){
+
+        final Calendar c = Calendar.getInstance();
+        mYear = c.get(Calendar.YEAR);
+        mMonth = c.get(Calendar.MONTH);
+        mDay = c.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                new DatePickerDialog.OnDateSetListener() {
+
+                    @Override
+                    public void onDateSet(DatePicker view, int year,
+                                          int monthOfYear, int dayOfMonth) {
+                        int mm=monthOfYear + 1;
+                        int dd=dayOfMonth;
+                        String month,date1;
+                        if(mm>9)
+                        {
+                            month=""+mm;
+
+                        }
+                        else
+                        {
+                            month="0"+mm;
+                        }
+                        if(dd>9)
+                        {
+                            date1=""+dd;
+
+                        }
+                        else
+                        {
+                            date1="0"+dd;
+                        }
+                        String date = date1+"-"+month+"-"+year ;
+
+                        if(type == 1){
+                            fromDate.setText(date);
+                        } else if(type == 2){
+                            toDate.setText(date);
+                        }
+
+
+                    }
+                }, mYear, mMonth, mDay);
+        datePickerDialog.show();
+    }
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+to make textview show only caps value 
+
+vehical_no.setFilters(new InputFilter[] {new InputFilter.AllCaps()});
+
+for avoiding spaces while getting string from edittext
+
+String tvehical_no = vehical_no.getText().toString().trim().replace(" ", "");
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+
+to avoid multiple data send from volley
+
+stringRequest.setRetryPolicy(new DefaultRetryPolicy(5000,           //  where 5000 is time  = 5 seconds
+                0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+private FragmentActivity activity;
+private Context mContext;
+private View rootview;
+
+@Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+
+        if (context instanceof Activity){
+            activity = (FragmentActivity) context;
+        }
+
+       mContext = context;
+}
+
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+To add custom menu icons and handle click events
+
+create layout -- parent layout must be FrameLayout   for ex:
+
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/exitImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/exit"
+        android:tint="@color/white"
+        android:padding="5dp"
+        android:layout_marginEnd="15dp"
+        android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</FrameLayout>
+
+Menu file:
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/exit"
+        app:showAsAction="ifRoom"
+        app:actionLayout="@layout/custom_mainactivity_menu_icon"
+        android:title="Exit">
+    </item>
+    <!--  android:icon="@drawable/exit"  -->
+    <!-- app:actionLayout="@layout/custom_mainactivity_menu_icon" -->
+</menu>
+
+
+Then in activity
+
+@Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        if (id == exit) {
+            onBackPressed();
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+
+        //Get a reference to your item by id
+        MenuItem item = menu.findItem(exit);
+
+        //Here, you get access to the view of your item, in this case, the layout of the item has a FrameLayout as root view but you can change it to whatever you use
+        FrameLayout rootView = (FrameLayout)item.getActionView();
+
+        //Then you access to your control by finding it in the rootView
+        ImageView control = (ImageView) rootView.findViewById(R.id.exitImg);
+
+        control.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        //And from here you can do whatever you want with your control
+
+
+
+        return true;
+    }
+
+_________________________________________________________________________________________________________________________________________________________________________
+
+Toasty.custom(MainActivity.this, "I'm a custom Toast", R.drawable.ic_cake_black_24dp, R.color.white, 1000, true, false).show();
+                
+// syntax of custom toast
+                
+// Toasty.custom(yourContext, "I'm a custom Toast", yourIconDrawable, tintColor, duration, withIcon,
+//shouldTint).show();
+
+_________________________________________________________________________________________________________________________________________________________________________ 
+
+if internet is not working in android pie the use 
+
+android:usesCleartextTraffic="true"  inside application tag of menifest
+
+for ex 
+
+<application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+
+        android:usesCleartextTraffic="true"
+
+        tools:replace="android:theme">
+        <activity android:name=".hardwares.tire_rfid.assign_tire_tag"></activity>
+        <activity android:name=".hardwares.ems.MeterTwoActivity"></activity>
+        <activity android:name=".hardwares.tire_rfid.new_installation" />
+        <activity android:name=".ERP.security.role_assign" />
+        <activity android:name=".ERP.masters.VehicalMaster"
+            />
+
+_________________________________________________________________________________________________________________________________________________________________________ 
+
+Want to finish fragment activity : getActivity().finish();
+
+_________________________________________________________________________________________________________________________________________________________________________ 
+
+burgstaller library suggested for ip camera connections
+
+_________________________________________________________________________________________________________________________________________________________________________ 
+
+Google Search : How to make pdf from webview on android
+
+Stackoverflow Answer Link: https://stackoverflow.com/a/48125050/11707117
+
+https://stackoverflow.com/questions/42376613/create-a-pdf-from-webview-on-android
+
+to create pdf from webview you need android>kitkat -> sdk>=19
+
+  btnSave.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.KITKAT) {
+
+                createWebPrintJob(webView);
+            } else {
+
+
+
+            }
+
+        }
+    });
+//// Function:
+
+private void createWebPrintJob(WebView webView) {
+
+    PrintManager printManager = (PrintManager) this
+            .getSystemService(Context.PRINT_SERVICE);
+
+    PrintDocumentAdapter printAdapter =
+            webView.createPrintDocumentAdapter();
+
+    String jobName = getString(R.string.app_name) + " Print Test";
+
+    if (printManager != null) {
+        printManager.print(jobName, printAdapter,
+                new PrintAttributes.Builder().build());
+    }
+}
+I have problem in create image from webview :))))
+
+_________________________________________________________________________________________________________________________________________________________________________ 
+
+Image Popup and zoom library : 
+
+allprojects {  
+      repositories {  
+         maven { url 'https://jitpack.io' }  
+      }  
+   }  
+
+implementation 'com.github.hsmnzaydn:imagezoom:1.2.1'
+
+github : 
+https://github.com/hsmnzaydn/image-zoom-view
+
+_________________________________________________________________________________________________________________________________________________________________________ 
+
+set horizontal LinearLayoutManager to Recyclerview
+
+stackoverflow reference link : https://stackoverflow.com/a/33389274/11707117
+
+link 2 : https://stackoverflow.com/questions/31728837/recyclerview-grow-element-from-right-to-left
+
+solved : recyclerview populated its view from right to left
+
+LinearLayoutManager linearLayoutManager = new LinearLayoutManager(yourContext);
+linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+linearLayoutManager.setStackFromEnd(false); // this will prevent linear layout manager to populate its view from right to left and if you want right to left just pass boolean true;
+
+recyclerView.setLayoutManager(linearLayoutManager);
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+use following in Menifest if Edittext is lagging, occured this problem in viewpager fragments
+
+solution link : https://stackoverflow.com/a/26602972/11707117
+
+android:windowSoftInputMode="adjustNothing"
+
+for ex: <activity
+            android:name=".RealEstate.SellPropActivity"
+            android:windowSoftInputMode="adjustNothing" />
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Custom TabLayout with rounded corners - Medium Article
+
+https://medium.com/@kuldar.daniel/android-tablayout-tabs-with-rounded-corners-e14169b0df59
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Updating data in an Android RecyclerView - Medium Article
+
+https://medium.com/@suragch/updating-data-in-an-android-recyclerview-842e56adbfd8
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Safe delete recyclerview items from RecyclerViewAdapter itself then use following
+
+just try ,
+
+int newPosition = holder.getAdapterPosition();
+in your removeItem() method and repalce position with newPosition.
+
+like ,
+
+  private void removeItem(int position) {
+    int newPosition = holder.getAdapterPosition();
+    model.remove(newPosition);
+    notifyItemRemoved(newPosition);
+    notifyItemRangeChanged(newPosition, model.size());
+}
+
+
+reference link from stackoverflow : 
+https://stackoverflow.com/a/44371699/11707117
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Android SMS Broadcast Receiver Google Library Tutuorial
+
+https://androidwave.com/automatic-sms-verification-android/
+
+library needed : implementation 'com.google.android.gms:play-services-auth:17.0.0'
+
+note : if you dont use latest version of library your app may crash.
+
+How to get Hash key : stack link = https://stackoverflow.com/a/54052163/11707117
+
+Sample SMS : <#> Your OTP is : 7068 for Real Estate    tM60L63mNDF
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Android Transparent Color (Hex Opacity Values)
+
+for ex : if you want to make 70% white transparent background then hex will be #B3FFFFFF  where  B3 is from following hex opacity values.
+
+100% — FF
+95% — F2
+90% — E6
+85% — D9
+80% — CC
+75% — BF
+70% — B3
+65% — A6
+60% — 99
+55% — 8C
+50% — 80
+45% — 73
+40% — 66
+35% — 59
+30% — 4D
+25% — 40
+20% — 33
+15% — 26
+10% — 1A
+5% — 0D
+0% — 00
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Get absolute file path from URI android - Stackoverflow link
+
+https://stackoverflow.com/a/26196374/11707117
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Android Auto Start Suggested by this contributor
+https://stackoverflow.com/a/30259729/11707117
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+ This ripple tag is used to create ripple effect in shapes, some people have to use
+ libraries to provide ripple effect if they are using custome shape, this is the simplest workaround for that problem, you
+ just have to wrape your shape inside ripple tag and set its ripple color and you will get ripple effect on that custome shape.
+
+example :
+
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/dark"> 
+    <item android:id="@+id/mask">
+
+        <shape android:shape="rectangle">
+            <solid android:color="@color/dark"/>
+            <corners android:radius="25dp"/>
+        </shape>
+
+    </item>
+
+    <item android:id="@+id/background">
+
+        <shape android:shape="rectangle">
+            <solid android:color="@color/light"/>
+            <corners android:radius="25dp"/>
+        </shape>
+
+    </item>
+
+</ripple>
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+This is the library which contains all the Google Play Services features, but google suggests to avoid use
+of this library as it increases app size by importing all the feature, many of which we're not gonna use
+
+implementation 'com.google.android.gms:play-services:12.0.1'
+
+Google suggests to add spesific Google Play Services libraries insted of this
+like for example if you wat Play-Services related to maps SDK then you will have to use following library
+
+implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+but in can in future if you want some kind of play services and you cannot find its appropriate library then
+implementation 'com.google.android.gms:play-services:12.0.1'     <--  this library will help you in that case.
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+This is the android id we used to indentify device uniquely
+
+String androidId = Settings.Secure.getString(getContentResolver(),
+                                             Settings.Secure.ANDROID_ID);
+
+but after searching for Settings.Secure.ANDROID_ID in Googles Android Documentation i found very 
+important and valueable information that we can use in future to retrieve some system information
+although we are not allowed to change that system info but just getting that info is very much important
+for some kind of app functionality development.
+
+following is the link for that documentation or if in case that link expires in future just google
+Settings.Secure.ANDROID_ID and you'll find the documentation, once just go through it.
+
+https://developer.android.com/reference/android/provider/Settings.Secure
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Recyclerview vertical as well as horizontal scrolling..
+
+just put your recyclerview inside horizontal scrollview
+
+Note : to work acurately without distortion you have to explicitly define the width and height of Rv Layout elements
+	otherwise if you use "weight" property it will be messy.. so just keep that in mind.
+
+https://stackoverflow.com/a/59787283
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Decode marathi or any other language text in android
+
+String decoded = Html.fromHtml(messageStr).toString();
+
+Its not necessary that all android smartphones supports marathi
+or any other language depends on the android version also
+but from Api 4.0 and above Html browser has support of almost all 
+languges thats why decoding string using Html.fromHtml is very
+much reliable.
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Change ProgressBar Color android
+
+This solution works on  Android API 21+ only.
+
+put below code inside progressbar tag in xml layout
+
+android:indeterminate="true"
+android:indeterminateTintMode="src_atop"
+android:indeterminateTint="@color/secondary"
+
+for example
+
+<ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="50dp"
+            android:visibility="visible"
+            android:indeterminate="true"
+            android:indeterminateTintMode="src_atop"
+            android:indeterminateTint="@color/secondary">
+
+stack solution link :
+https://stackoverflow.com/a/31359053/11707117
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+This method will check if your app has been installed from the Play Store.
+
+https://stackoverflow.com/a/37540163/11707117
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Google Maps API debug and release keys | Google maps console |  Google play console - Management
+
+https://stackoverflow.com/a/54819124/11707117
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+Real Estate Viewpager  display preview of left & right side of the slide 
+
+https://stackoverflow.com/questions/10098040/android-viewpager-show-preview-of-page-on-left-and-right
+
+____________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
